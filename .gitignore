@@ -1,0 +1,29 @@
+# Unity generated
+Library/
+Temp/
+Obj/
+Build/
+
+# Backup files
+*.bak
+
+# Unity3D generated meta files
+*.meta
+
+# Unity3D Generated File On Crash Reports
+sysinfo.txt
+
+# Builds
+*.apk
+*.aab
+*.unitypackage
+
+# Mac specific
+.DS_Store
+
+# Rider
+*.iml
+*.ipr
+*.iws
+.idea/
+.idea_modules/
