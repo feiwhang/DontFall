@@ -124,7 +124,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 0946a5690c8a14ab4b286cd064f8d39f, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -138,12 +138,12 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 4924339445469119056}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 0946a5690c8a14ab4b286cd064f8d39f, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0048582554, y: -0.05481285}
-  m_Size: {x: 0.2590832, y: 0.68312395}
+  m_Offset: {x: -0.0036454946, y: -0.05481285}
+  m_Size: {x: 0.40262046, y: 0.68312395}
   m_Direction: 0
 --- !u!58 &2535210850434023064
 CircleCollider2D:
@@ -154,10 +154,10 @@ CircleCollider2D:
   m_GameObject: {fileID: 4924339445469119056}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: c7643e67454b84c3f9b7003829666708, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.36597794}
+  m_Offset: {x: -0.0060997605, y: -0.35667464}
   serializedVersion: 2
-  m_Radius: 0.09191841
+  m_Radius: 0.11412004
