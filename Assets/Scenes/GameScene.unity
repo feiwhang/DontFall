@@ -383,6 +383,7 @@ GameObject:
   - component: {fileID: 2076975364}
   - component: {fileID: 2076975366}
   - component: {fileID: 2076975367}
+  - component: {fileID: 2076975368}
   m_Layer: 6
   m_Name: Platform Tilemap
   m_TagString: Untagged
@@ -663,6 +664,19 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
+--- !u!114 &2076975368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2076975362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 860b7d077e8ab46f1b84cfde3e07015d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpForce: 8
 --- !u!1001 &4924339446301776691
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -670,6 +684,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2250376944071002480, guid: d362f0316e517440d8464bb8fcc3761e, type: 3}
+      propertyPath: m_Size.x
+      value: 0.33357435
+      objectReference: {fileID: 0}
+    - target: {fileID: 2250376944071002480, guid: d362f0316e517440d8464bb8fcc3761e, type: 3}
+      propertyPath: m_Size.y
+      value: 0.54061913
+      objectReference: {fileID: 0}
+    - target: {fileID: 2250376944071002480, guid: d362f0316e517440d8464bb8fcc3761e, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.00000008940697
+      objectReference: {fileID: 0}
+    - target: {fileID: 2250376944071002480, guid: d362f0316e517440d8464bb8fcc3761e, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.21675003
+      objectReference: {fileID: 0}
+    - target: {fileID: 3391759660768390284, guid: d362f0316e517440d8464bb8fcc3761e, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: c7643e67454b84c3f9b7003829666708, type: 2}
     - target: {fileID: 4924339445469119056, guid: d362f0316e517440d8464bb8fcc3761e, type: 3}
       propertyPath: m_Name
       value: SpaceMan
@@ -677,6 +711,18 @@ PrefabInstance:
     - target: {fileID: 4924339445469119062, guid: d362f0316e517440d8464bb8fcc3761e, type: 3}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4924339445469119062, guid: d362f0316e517440d8464bb8fcc3761e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4924339445469119062, guid: d362f0316e517440d8464bb8fcc3761e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4924339445469119062, guid: d362f0316e517440d8464bb8fcc3761e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4924339445469119062, guid: d362f0316e517440d8464bb8fcc3761e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -720,3 +766,51 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d362f0316e517440d8464bb8fcc3761e, type: 3}
+--- !u!1 &4924339446301776692 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4924339445469119056, guid: d362f0316e517440d8464bb8fcc3761e, type: 3}
+  m_PrefabInstance: {fileID: 4924339446301776691}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4924339446301776693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4924339446301776692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: a63dc880d018241f482e2f1d477f35e8, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!114 &4924339446301776699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4924339446301776692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9630807675e244de2a1c813934e1b25b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
