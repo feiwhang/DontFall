@@ -28,3 +28,4 @@ sysinfo.txt
 *.iws
 .idea/
 .idea_modules/
+*crash*.*
