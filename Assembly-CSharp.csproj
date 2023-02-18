@@ -41,7 +41,8 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets/Scripts/MenuController.cs" />
+     <Compile Include="Assets/Scripts/SceneController.cs" />
+     <Compile Include="Assets/Scripts/Scroller.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets/Scenes" />
      <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
