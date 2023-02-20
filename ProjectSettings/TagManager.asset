@@ -14,7 +14,7 @@ TagManager:
   - Platform
   - Player
   - Tunnel
-  - 
+  - Boundary
   - 
   - 
   - 
@@ -46,6 +46,9 @@ TagManager:
     locked: 0
   - name: Platform
     uniqueID: 3100943925
+    locked: 0
+  - name: Boundary
+    uniqueID: 4087752415
     locked: 0
   - name: Tunnel
     uniqueID: 149753443
