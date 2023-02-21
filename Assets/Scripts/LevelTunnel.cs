@@ -5,6 +5,12 @@ using UnityEngine.SceneManagement;
 public class LevelTunnel : MonoBehaviour
 {
     [SerializeField] private float levelLoadDelay = 0.25f;
+    private GameSession _gameSession;
+
+    private void Awake()
+    {
+        _gameSession = FindObjectOfType<GameSession>();
+    }
 
     void OnTriggerEnter2D(Collider2D col)
     {
@@ -22,6 +28,9 @@ public class LevelTunnel : MonoBehaviour
         {
             nextSceneIndex = 0;
         }
+
+        _gameSession.UpdateHighestHeight(0f);
+        
         SceneManager.LoadScene(nextSceneIndex);
     }
 }

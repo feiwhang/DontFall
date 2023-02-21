@@ -11,10 +11,11 @@ public class PlayerMovement : MonoBehaviour
     private CapsuleCollider2D _capsuleCollider;
     private CircleCollider2D _circleCollider;
     private Animator _animator;
-    
+    private GameSession _gameSession;
 
     void Start()
     {
+        _gameSession = FindObjectOfType<GameSession>();
         _rb = GetComponent<Rigidbody2D>();
         _capsuleCollider = GetComponent<CapsuleCollider2D>();
         _circleCollider = GetComponent<CircleCollider2D>();
@@ -24,7 +25,8 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         Move();
-        Die();
+        OnTouchingHazard();
+        UpdateScore();
     }
 
     void OnMove(InputValue value)
@@ -39,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
         _rb.velocity = playerVelocity;
     }
 
-    void Die()
+    void OnTouchingHazard()
     {
         if (_capsuleCollider.IsTouchingLayers(LayerMask.GetMask("Hazard")))
         {
@@ -47,6 +49,16 @@ public class PlayerMovement : MonoBehaviour
             _capsuleCollider.isTrigger = true;
             _circleCollider.isTrigger = true;
             _rb.velocity = new Vector2(_rb.velocity.x, -5f);
+        }
+    }
+
+    void UpdateScore()
+    {
+        var highestHeight = _gameSession.GetHighestHeight();
+        if (_rb.position.y > highestHeight && _rb.velocity.y > 0)
+        {
+            _gameSession.UpdateHighestHeight(_rb.position.y);
+            _gameSession.ProcessScoreCount(_rb.position.y);
         }
     }
 
