@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelTunnel : MonoBehaviour
 {
-    [SerializeField] private float levelLoadDelay = 1f;
+    [SerializeField] private float levelLoadDelay = 0.25f;
 
     void OnTriggerEnter2D(Collider2D col)
     {
