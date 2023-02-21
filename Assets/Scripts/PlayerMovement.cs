@@ -8,15 +8,23 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector2 _moveInput;
     private Rigidbody2D _rb;
+    private CapsuleCollider2D _capsuleCollider;
+    private CircleCollider2D _circleCollider;
+    private Animator _animator;
+    
 
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
+        _capsuleCollider = GetComponent<CapsuleCollider2D>();
+        _circleCollider = GetComponent<CircleCollider2D>();
+        _animator = GetComponent<Animator>();
     }
 
     void Update()
     {
         Move();
+        Die();
     }
 
     void OnMove(InputValue value)
@@ -29,6 +37,17 @@ public class PlayerMovement : MonoBehaviour
         Vector2 playerVelocity = new Vector2(_moveInput.x * moveSpeed, _rb.velocity.y);
 
         _rb.velocity = playerVelocity;
+    }
+
+    void Die()
+    {
+        if (_capsuleCollider.IsTouchingLayers(LayerMask.GetMask("Hazard")))
+        {
+            _animator.SetTrigger("Dying");
+            _capsuleCollider.isTrigger = true;
+            _circleCollider.isTrigger = true;
+            _rb.velocity = new Vector2(_rb.velocity.x, -5f);
+        }
     }
 
     private void OnBecameInvisible()
