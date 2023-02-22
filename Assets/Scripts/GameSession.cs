@@ -26,7 +26,8 @@ public class GameSession : MonoBehaviour
     {
         if (newYPosition > _highestHeight)
         {
-            _score += (int)(newYPosition * 0.5);
+            var sceneIndex = SceneManager.GetActiveScene().buildIndex;
+            _score += (int)(newYPosition * 0.25 * sceneIndex);
             scoreText.text = _score.ToString();
             UpdateHighestHeight(newYPosition);
         }
