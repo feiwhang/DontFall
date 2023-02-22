@@ -35,9 +35,4 @@ public class GameSession : MonoBehaviour
     {
         _highestHeight = newHeight;
     }
-    
-    public float GetHighestHeight()
-    {
-        return _highestHeight;
-    }
 }
