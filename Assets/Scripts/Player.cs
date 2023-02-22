@@ -1,8 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
 
-public class PlayerMovement : MonoBehaviour
+public class Player : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 3f;
 
@@ -15,11 +14,12 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-        _gameSession = FindObjectOfType<GameSession>();
+        
         _rb = GetComponent<Rigidbody2D>();
         _capsuleCollider = GetComponent<CapsuleCollider2D>();
         _circleCollider = GetComponent<CircleCollider2D>();
         _animator = GetComponent<Animator>();
+        _gameSession = FindObjectOfType<GameSession>();
     }
 
     void Update()
@@ -49,6 +49,7 @@ public class PlayerMovement : MonoBehaviour
             _capsuleCollider.isTrigger = true;
             _circleCollider.isTrigger = true;
             _rb.velocity = new Vector2(_rb.velocity.x, -5f);
+            // this will automatically trigger the OnBecameInvisible() method
         }
     }
 
@@ -66,7 +67,13 @@ public class PlayerMovement : MonoBehaviour
     {
         if (_rb.velocity.y < 0 && _rb.position.y < 80)
         {
-            SceneManager.LoadScene("DeadScene");
+            FindObjectOfType<GameSession>().ProcessPlayerDeath();
         }
+    }
+
+    // ReSharper disable Unity.PerformanceAnalysis
+    public void UpdateGameSession()
+    {
+        _gameSession = FindObjectOfType<GameSession>();
     }
 }

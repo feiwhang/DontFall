@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameSession : MonoBehaviour
 {
@@ -40,8 +41,9 @@ public class GameSession : MonoBehaviour
         return highestHeight;
     }
 
-    // public void ProcessPlayerDeath()
-    // {
-    //     
-    // }
+    public void ProcessPlayerDeath()
+    {
+        SceneManager.LoadScene("DeadScene");
+        Destroy(gameObject);
+    }
 }
