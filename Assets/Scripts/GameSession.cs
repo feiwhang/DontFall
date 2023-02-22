@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameSession : MonoBehaviour
 {
@@ -34,5 +35,17 @@ public class GameSession : MonoBehaviour
     public void UpdateHighestHeight(float newHeight)
     {
         _highestHeight = newHeight;
+    }
+    
+    public void ProcessPlayerDeath()
+    {
+        var currentHighScore = PlayerPrefs.GetInt("HighScore", 0);
+        if (_score > currentHighScore)
+        {
+            PlayerPrefs.SetInt("HighScore", _score);
+        }
+        PlayerPrefs.SetInt("FinalScore", _score);
+        Destroy(gameObject);
+        SceneManager.LoadScene("DeadScene");
     }
 }

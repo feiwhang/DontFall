@@ -65,8 +65,7 @@ public class Player : MonoBehaviour
     {
         if (_rb.velocity.y < 0 && _rb.position.y < 80)
         {
-            SceneManager.LoadScene("DeadScene");
-            Destroy(FindObjectOfType<GameSession>().gameObject);
+            FindObjectOfType<GameSession>().ProcessPlayerDeath();
         }
     }
 }
