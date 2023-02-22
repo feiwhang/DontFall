@@ -4,15 +4,12 @@ using UnityEngine.SceneManagement;
 
 public class GameSession : MonoBehaviour
 {
-    [SerializeField] private int score;
-    [SerializeField] private float highestHeight;
+    private int _score;
+    private float _highestHeight;
     
     [SerializeField] private TextMeshProUGUI scoreText;
     void Awake()
     {
-        score = 0;
-        highestHeight = 0f;
-        
         int numGameSessions = FindObjectsOfType<GameSession>().Length;
 
         if (numGameSessions > 1)
@@ -27,18 +24,18 @@ public class GameSession : MonoBehaviour
 
     public void ProcessScoreCount(float newYPosition)
     {
-        score += (int)(newYPosition * 0.5);
-        scoreText.text = score.ToString();
+        _score += (int)(newYPosition * 0.5);
+        scoreText.text = _score.ToString();
     }
     
     public void UpdateHighestHeight(float newHeight)
     {
-        highestHeight = newHeight;
+        _highestHeight = newHeight;
     }
     
     public float GetHighestHeight()
     {
-        return highestHeight;
+        return _highestHeight;
     }
 
     public void ProcessPlayerDeath()

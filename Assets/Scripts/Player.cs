@@ -10,7 +10,6 @@ public class Player : MonoBehaviour
     private CapsuleCollider2D _capsuleCollider;
     private CircleCollider2D _circleCollider;
     private Animator _animator;
-    private GameSession _gameSession;
 
     void Start()
     {
@@ -19,7 +18,6 @@ public class Player : MonoBehaviour
         _capsuleCollider = GetComponent<CapsuleCollider2D>();
         _circleCollider = GetComponent<CircleCollider2D>();
         _animator = GetComponent<Animator>();
-        _gameSession = FindObjectOfType<GameSession>();
     }
 
     void Update()
@@ -53,13 +51,15 @@ public class Player : MonoBehaviour
         }
     }
 
+    // ReSharper disable Unity.PerformanceAnalysis
     void UpdateScore()
     {
-        var highestHeight = _gameSession.GetHighestHeight();
+        var gameSession = FindObjectOfType<GameSession>();
+        var highestHeight = gameSession.GetHighestHeight();
         if (_rb.position.y > highestHeight && _rb.velocity.y > 0)
         {
-            _gameSession.UpdateHighestHeight(_rb.position.y);
-            _gameSession.ProcessScoreCount(_rb.position.y);
+            gameSession.UpdateHighestHeight(_rb.position.y);
+            gameSession.ProcessScoreCount(_rb.position.y);
         }
     }
 
@@ -67,13 +67,8 @@ public class Player : MonoBehaviour
     {
         if (_rb.velocity.y < 0 && _rb.position.y < 80)
         {
+            
             FindObjectOfType<GameSession>().ProcessPlayerDeath();
         }
-    }
-
-    // ReSharper disable Unity.PerformanceAnalysis
-    public void UpdateGameSession()
-    {
-        _gameSession = FindObjectOfType<GameSession>();
     }
 }

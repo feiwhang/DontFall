@@ -6,11 +6,9 @@ public class LevelTunnel : MonoBehaviour
 {
     [SerializeField] private float levelLoadDelay = 0.25f;
     private GameSession _gameSession;
-    private Player _player;
 
     private void Start()
     {
-        _player = FindObjectOfType<Player>();
         _gameSession = FindObjectOfType<GameSession>();
     }
 
@@ -32,7 +30,6 @@ public class LevelTunnel : MonoBehaviour
         }
 
         _gameSession.UpdateHighestHeight(0f);
-        _player.UpdateGameSession();
         
         SceneManager.LoadScene(nextSceneIndex);
     }

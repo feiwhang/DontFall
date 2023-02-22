@@ -41,12 +41,12 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets/Scripts/SceneController.cs" />
-     <Compile Include="Assets/Scripts/Player.cs" />
-     <Compile Include="Assets/Scripts/Platform.cs" />
-     <Compile Include="Assets/Scripts/LevelTunnel.cs" />
-     <Compile Include="Assets/Scripts/BackgroundParallax.cs" />
      <Compile Include="Assets/Scripts/GameSession.cs" />
+     <Compile Include="Assets/Scripts/LevelTunnel.cs" />
+     <Compile Include="Assets/Scripts/Player.cs" />
+     <Compile Include="Assets/Scripts/SceneController.cs" />
+     <Compile Include="Assets/Scripts/Platform.cs" />
+     <Compile Include="Assets/Scripts/BackgroundParallax.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets/Scenes" />
      <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
@@ -782,6 +782,12 @@
      <Reference Include="Unity.ShaderGraph.Editor">
      <HintPath>/Users/feiwhang/Project/DontFall/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
      </Reference>
+     <Reference Include="Cinemachine">
+     <HintPath>/Users/feiwhang/Project/DontFall/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+     </Reference>
+     <Reference Include="com.unity.cinemachine.editor">
+     <HintPath>/Users/feiwhang/Project/DontFall/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
      <HintPath>/Users/feiwhang/Project/DontFall/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
      </Reference>
@@ -895,12 +901,6 @@
      </Reference>
      <Reference Include="Unity.VisualScripting.State">
      <HintPath>/Users/feiwhang/Project/DontFall/Library/ScriptAssemblies/Unity.VisualScripting.State.dll</HintPath>
-     </Reference>
-     <Reference Include="com.unity.cinemachine.editor">
-     <HintPath>/Users/feiwhang/Project/DontFall/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Cinemachine">
-     <HintPath>/Users/feiwhang/Project/DontFall/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
      </Reference>
   </ItemGroup>
   <ItemGroup>
