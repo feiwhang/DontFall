@@ -55,12 +55,9 @@ public class Player : MonoBehaviour
     // ReSharper disable Unity.PerformanceAnalysis
     void UpdateScore()
     {
-        var gameSession = FindObjectOfType<GameSession>();
-        var highestHeight = gameSession.GetHighestHeight();
-        if (_rb.position.y > highestHeight && _rb.velocity.y > 0)
+        if (_rb.velocity.y > 0)
         {
-            gameSession.UpdateHighestHeight(_rb.position.y);
-            gameSession.ProcessScoreCount(_rb.position.y);
+            FindObjectOfType<GameSession>().ProcessScoreCount(_rb.position.y);
         }
     }
 
@@ -69,6 +66,7 @@ public class Player : MonoBehaviour
         if (_rb.velocity.y < 0 && _rb.position.y < 80)
         {
             SceneManager.LoadScene("DeadScene");
+            Destroy(FindObjectOfType<GameSession>().gameObject);
         }
     }
 }

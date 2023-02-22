@@ -23,8 +23,12 @@ public class GameSession : MonoBehaviour
 
     public void ProcessScoreCount(float newYPosition)
     {
-        _score += (int)(newYPosition * 0.5);
-        scoreText.text = _score.ToString();
+        if (newYPosition > _highestHeight)
+        {
+            _score += (int)(newYPosition * 0.5);
+            scoreText.text = _score.ToString();
+            UpdateHighestHeight(newYPosition);
+        }
     }
     
     public void UpdateHighestHeight(float newHeight)
