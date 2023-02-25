@@ -27,6 +27,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         Move();
+        FlipSprite();
         OnTouchingHazard();
         UpdateScore();
     }
@@ -41,6 +42,15 @@ public class Player : MonoBehaviour
         Vector2 playerVelocity = new Vector2(_moveInput.x * moveSpeed, _rb.velocity.y);
 
         _rb.velocity = playerVelocity;
+    }
+    
+    void FlipSprite()
+    {
+        bool playerHasHorizontalSpeed = Mathf.Abs(_rb.velocity.x) > Mathf.Epsilon;
+        if (playerHasHorizontalSpeed)
+        {
+            transform.localScale = new Vector2(Mathf.Sign(_rb.velocity.x) * 1.25f, 1.25f);
+        }
     }
 
     void OnTouchingHazard()

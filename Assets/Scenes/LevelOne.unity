@@ -321,6 +321,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpaceMan
       objectReference: {fileID: 0}
+    - target: {fileID: 4924339445469119060, guid: d362f0316e517440d8464bb8fcc3761e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1990214567, guid: 6de876b5ff0704fcaa6e9a8e3f1be765, type: 3}
+    - target: {fileID: 4924339445469119060, guid: d362f0316e517440d8464bb8fcc3761e, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4924339445469119062, guid: d362f0316e517440d8464bb8fcc3761e, type: 3}
       propertyPath: m_RootOrder
       value: 2
