@@ -13,7 +13,6 @@ public class AccessoryController : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Destroy(gameObject);
             _platform.OnTouchingAccessory(); 
         }
     }

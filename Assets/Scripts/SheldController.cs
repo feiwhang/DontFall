@@ -13,7 +13,6 @@ public class SheldController : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Destroy(gameObject);
             _player.OnTouchingShield();
         }
     }
