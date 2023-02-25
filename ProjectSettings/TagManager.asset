@@ -15,7 +15,7 @@ TagManager:
   - Player
   - Tunnel
   - Hazard
-  - 
+  - Accessory
   - 
   - 
   - 
@@ -52,6 +52,9 @@ TagManager:
     locked: 0
   - name: Hazard
     uniqueID: 1984212529
+    locked: 0
+  - name: Accessory
+    uniqueID: 3032976841
     locked: 0
   - name: Player
     uniqueID: 355794741
