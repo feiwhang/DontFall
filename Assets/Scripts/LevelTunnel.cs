@@ -27,8 +27,7 @@ public class LevelTunnel : MonoBehaviour
         if (nextSceneIndex == SceneManager.sceneCountInBuildSettings)
         {
             nextSceneIndex = 0;
-            var gameSession = FindObjectOfType<GameSession>();
-            Destroy(gameSession.gameObject);
+            Destroy(_gameSession.gameObject);
         }
 
         _gameSession.UpdateHighestHeight(0f);
