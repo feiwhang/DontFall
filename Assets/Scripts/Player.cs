@@ -1,6 +1,6 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -11,6 +11,9 @@ public class Player : MonoBehaviour
     private CapsuleCollider2D _capsuleCollider;
     private CircleCollider2D _circleCollider;
     private Animator _animator;
+    
+    private bool _isShielded;
+    private const float ShieldEffectDuration = 6.9f;
 
     void Start()
     {
@@ -42,7 +45,7 @@ public class Player : MonoBehaviour
 
     void OnTouchingHazard()
     {
-        if (_capsuleCollider.IsTouchingLayers(LayerMask.GetMask("Hazard")))
+        if (!_isShielded && _capsuleCollider.IsTouchingLayers(LayerMask.GetMask("Hazard")))
         {
             _animator.SetTrigger("Dying");
             _capsuleCollider.isTrigger = true;
@@ -67,5 +70,21 @@ public class Player : MonoBehaviour
         {
             FindObjectOfType<GameSession>().ProcessPlayerDeath();
         }
+    }
+
+    public void OnTouchingShield()
+    {
+        _isShielded = true;
+        _animator.SetBool("isShielding", true);
+        
+        StartCoroutine(RemoveShield());
+    }
+    
+    IEnumerator RemoveShield()
+    {
+        yield return new WaitForSeconds(ShieldEffectDuration);
+        
+        _isShielded = false;
+        _animator.SetBool("isShielding", false);  
     }
 }

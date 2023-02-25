@@ -48,8 +48,9 @@
      <Compile Include="Assets/Scripts/Player.cs" />
      <Compile Include="Assets/Scripts/SceneController.cs" />
      <Compile Include="Assets/Scripts/Platform.cs" />
+     <Compile Include="Assets/Scripts/SheldController.cs" />
      <Compile Include="Assets/Scripts/BackgroundParallax.cs" />
-     <Compile Include="Assets/AccessoryController.cs" />
+     <Compile Include="Assets/Scripts/AccessoryController.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets/Scenes" />
      <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
