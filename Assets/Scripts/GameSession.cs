@@ -38,7 +38,7 @@ public class GameSession : MonoBehaviour
         _highestHeight = newHeight;
     }
     
-    public void ProcessPlayerDeath()
+    public void ProcessGameEnd()
     {
         var currentHighScore = PlayerPrefs.GetInt("HighScore", 0);
         if (_score > currentHighScore)

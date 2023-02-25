@@ -78,7 +78,7 @@ public class Player : MonoBehaviour
     {
         if (_rb.velocity.y < 0 && _rb.position.y < 80)
         {
-            FindObjectOfType<GameSession>().ProcessPlayerDeath();
+            FindObjectOfType<GameSession>().ProcessGameEnd();
         }
     }
 
