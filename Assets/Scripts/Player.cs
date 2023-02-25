@@ -60,7 +60,7 @@ public class Player : MonoBehaviour
             _animator.SetTrigger("Dying");
             _capsuleCollider.isTrigger = true;
             _circleCollider.isTrigger = true;
-            _rb.velocity = new Vector2(_rb.velocity.x, -3f);
+            _rb.velocity = new Vector2(_rb.velocity.x, -4f);
             // this will automatically trigger the OnBecameInvisible() method
         }
     }
